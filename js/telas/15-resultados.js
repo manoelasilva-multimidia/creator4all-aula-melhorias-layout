@@ -12,6 +12,13 @@ document.querySelectorAll('.sound-trigger').forEach(b=>b.addEventListener('click
   document.querySelectorAll('.sound-trigger').forEach(x=>x.classList.toggle('is-muted', muted));
 }));
 
+const saveButton=document.querySelector('.grupo-finaliza-buttons .button.is-success');
+if(saveButton){
+  saveButton.addEventListener('click',()=>{
+    saveButton.hidden=true;
+  });
+}
+
 const optionsButton=document.getElementById('exibir-finaliza-opcoes');
 const optionsList=document.querySelector('.finaliza-lista-opcoes');
 optionsButton.addEventListener('click',event=>{

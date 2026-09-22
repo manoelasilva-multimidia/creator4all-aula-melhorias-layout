@@ -21,8 +21,20 @@ html,body{
   letter-spacing:.01em;
 }
 .fa-ellipsis-v:before{content:"\f142"}
+.desktop-header{position:sticky;top:0;z-index:30}
+.desktop-header .tool{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  cursor:pointer;
+}
 .desktop-header .points{display:flex;flex-direction:column;align-items:center;justify-content:center}
 .desktop-header .points strong,.desktop-header .points span{color:#fff}
+.progress{position:sticky;top:66px;z-index:29}
+.progress>span{display:block;height:100%}
+.stage{display:flex;justify-content:center;align-items:flex-start}
 .blocoConteudo{
   width:min(1200px,100%);
   margin:25px 0 32px;
@@ -43,8 +55,9 @@ html,body{
 .blocoConteudo .fas{font-family:"Font Awesome 5 Free";font-weight:900;color:#585858}
 .blocoConteudo p{margin:0}
 .texto-largura-auto{display:block;margin-left:0 !important}
-.finaliza-titulo-opcoes{display:flex;justify-content:space-between;align-items:flex-start}
-.finaliza-area-opcoes{position:relative;margin:0;top:8px;flex:0 0 auto}
+.finaliza-titulo-opcoes{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.titulo-aula{flex:1 1 auto;min-width:0}
+.finaliza-area-opcoes{position:relative;margin:0;top:0;flex:0 0 auto}
 .finaliza-lista-opcoes{
   list-style:none;
   display:none;
@@ -67,6 +80,27 @@ html,body{
   cursor:pointer;
 }
 .finaliza-lista-opcoes > button:focus{background:#eee}
+.grupo-finaliza-buttons{margin:0 0 4px}
+.grupo-finaliza-buttons .button.is-success{
+  display:inline-block;
+  margin:0 0 15px;
+  padding:5px 10px;
+  border:0;
+  border-bottom:5px solid #2d8c48;
+  border-radius:8px;
+  background:#3ea55b;
+  color:#fff;
+  font-size:18px;
+  line-height:28px;
+  text-shadow:0 -2px #41a85f;
+  cursor:pointer;
+}
+.grupo-finaliza-buttons .button.is-success:active{
+  transform:translateY(5px);
+  border-bottom-width:1px;
+  padding-top:7px;
+  padding-bottom:3px;
+}
 .button.is-white{
   background:transparent;
   border:1px solid #efefef;
@@ -111,3 +145,10 @@ body.high-contrast .blocoConteudo div,
 body.high-contrast .blocoConteudo b,
 body.high-contrast .blocoConteudo span,
 body.high-contrast .button.is-white{color:#fff;background:#111}
+body.high-contrast .grupo-finaliza-buttons .button.is-success{
+  background:#111;
+  color:#fff;
+  border:1px solid #fff;
+  border-bottom-width:5px;
+  text-shadow:none;
+}

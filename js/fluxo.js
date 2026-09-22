@@ -35,7 +35,9 @@ const activityMeta={
  10:{title:'Preenchimento',correctText:'Habitat',page:14}
 };
 
-const frame=document.getElementById('screenFrame');
+const slots=[document.getElementById('slotA'),document.getElementById('slotB')];
+let activeSlot=slots[0];
+let frame=activeSlot.querySelector('iframe');
 const toast=document.getElementById('flowToast');
 let currentPage=0;
 let feedbackContext=null;
@@ -62,71 +64,145 @@ function nextLessonPage(pageIndex){const p=flowPosition(pageIndex);return p>=0&&
 
 
 
-const SCREEN_MOTION_MS=450;
-const SCREEN_MOTION_CSS=`
-@keyframes screenEnter{from{transform:translateX(200px)}to{transform:translateX(0)}}
-@keyframes screenExit{from{transform:translateX(0)}to{transform:translateX(-200px)}}
-main.screen-enter{animation:screenEnter .5s ease-in-out}
-main.screen-exit{animation:screenExit .45s ease-in-out forwards}
-@media (prefers-reduced-motion:reduce){
-  main.screen-enter,main.screen-exit{animation:none !important}
-}`;
+const SCREEN_MS=420;
+const SCREEN_EASE='cubic-bezier(0.22, 0.61, 0.36, 1)';
 let navLock=false;
 let hasShownScreen=false;
+let motionToken=0;
+let navSeq=0;
 
-function childDocument(){
-  try{return frame.contentDocument}catch(e){return null}
+function prefersReducedMotion(){
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
-function ensureScreenMotion(doc){
-  if(!doc||doc.getElementById('screen-motion')) return;
-  const style=doc.createElement('style');
-  style.id='screen-motion';
-  style.textContent=SCREEN_MOTION_CSS;
-  (doc.head||doc.documentElement).appendChild(style);
+function otherSlot(slot){
+  return slot===slots[0]?slots[1]:slots[0];
 }
-function runNavigation(apply){
-  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const doc=childDocument();
-  const panel=doc&&doc.querySelector('main');
-  if(!hasShownScreen||!panel||reduce){
+function navigationDirection(toPage){
+  if(currentPage===4||currentPage===6){
+    const activityPage=feedbackContext&&activityToPage.get(feedbackContext.activityNo);
+    if(activityPage!=null&&toPage===activityPage) return -1;
+    return 1;
+  }
+  const from=flowPosition(currentPage);
+  const to=flowPosition(toPage);
+  if(from<0||to<0||to===from) return 1;
+  return to<from?-1:1;
+}
+function setFramePage(pageIndex){
+  frame.title=pages[pageIndex].title;
+  frame.src=pages[pageIndex].file+'?nav='+(++navSeq);
+}
+function whenFrameReady(iframe,callback){
+  const onLoad=()=>{
+    let href='';
+    try{href=iframe.contentWindow.location.href}catch(e){href=''}
+    if(!href||href==='about:blank') return;
+    iframe.removeEventListener('load',onLoad);
+    callback();
+  };
+  iframe.addEventListener('load',onLoad);
+}
+function slideSlot(slot,from,to){
+  return slot.animate(
+    [{transform:'translate3d('+from+',0,0)'},{transform:'translate3d('+to+',0,0)'}],
+    {duration:SCREEN_MS,easing:SCREEN_EASE,fill:'forwards'}
+  );
+}
+function settleSlots(outgoing,incoming){
+  outgoing.classList.add('is-idle');
+  outgoing.classList.remove('is-active');
+  outgoing.setAttribute('aria-hidden','true');
+  incoming.classList.add('is-active');
+  incoming.classList.remove('is-idle');
+  incoming.removeAttribute('aria-hidden');
+  outgoing.style.transform='';
+  incoming.style.transform='';
+  outgoing.style.zIndex='';
+  incoming.style.zIndex='';
+  outgoing.style.pointerEvents='';
+  incoming.style.pointerEvents='';
+  outgoing.getAnimations().forEach(animation=>animation.cancel());
+  incoming.getAnimations().forEach(animation=>animation.cancel());
+}
+function showLoadedPage(){
+  let doc=null;
+  try{doc=frame.contentDocument}catch(e){doc=null}
+  if(!doc){
+    navLock=false;
+    showToast('Abra esta aula por um servidor local. O navegador bloqueia a navegação quando o arquivo é aberto direto.');
+    return;
+  }
+  hasShownScreen=true;
+  navLock=false;
+  wireChild();
+}
+function runNavigation(apply,direction){
+  const dir=direction<0?-1:1;
+  if(navLock) return;
+  navLock=true;
+  const token=++motionToken;
+  if(!hasShownScreen||prefersReducedMotion()){
+    whenFrameReady(frame,()=>{
+      if(token!==motionToken) return;
+      showLoadedPage();
+    });
     apply();
     return;
   }
-  if(navLock) return;
-  navLock=true;
-  ensureScreenMotion(doc);
-  panel.classList.remove('screen-enter');
-  void panel.offsetWidth;
-  panel.classList.add('screen-exit');
-  window.setTimeout(()=>{
-    navLock=false;
-    apply();
-  },SCREEN_MOTION_MS);
-}
-function playScreenEnter(doc){
-  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const panel=doc.querySelector('main');
-  if(!panel||reduce) return;
-  ensureScreenMotion(doc);
-  panel.classList.remove('screen-exit');
-  panel.classList.add('screen-enter');
+  const outgoing=activeSlot;
+  const incoming=otherSlot(activeSlot);
+  const inFrame=incoming.querySelector('iframe');
+  const fromX=dir<0?'-100%':'100%';
+  const outX=dir<0?'100%':'-100%';
+  incoming.style.transform='translate3d('+fromX+',0,0)';
+  frame=inFrame;
+  whenFrameReady(inFrame,()=>{
+    if(token!==motionToken) return;
+    let doc=null;
+    try{doc=inFrame.contentDocument}catch(e){doc=null}
+    if(!doc){
+      frame=outgoing.querySelector('iframe');
+      incoming.style.transform='';
+      navLock=false;
+      showToast('Abra esta aula por um servidor local. O navegador bloqueia a navegação quando o arquivo é aberto direto.');
+      return;
+    }
+    outgoing.style.zIndex='1';
+    incoming.style.zIndex='2';
+    outgoing.style.pointerEvents='none';
+    incoming.style.pointerEvents='none';
+    const outAnim=slideSlot(outgoing,'0%',outX);
+    const inAnim=slideSlot(incoming,fromX,'0%');
+    incoming.classList.remove('is-idle');
+    incoming.removeAttribute('aria-hidden');
+    activeSlot=incoming;
+    hasShownScreen=true;
+    wireChild();
+    const finish=()=>{
+      if(token!==motionToken||incoming.classList.contains('is-active')) return;
+      settleSlots(outgoing,incoming);
+      navLock=false;
+    };
+    Promise.all([outAnim.finished,inAnim.finished]).then(finish).catch(finish);
+    window.setTimeout(finish,SCREEN_MS+80);
+  });
+  apply();
 }
 function loadPage(pageIndex){
+  const direction=navigationDirection(pageIndex);
   runNavigation(()=>{
     feedbackContext=null;
     currentPage=pageIndex;
-    frame.title=pages[pageIndex].title;
-    frame.src=pages[pageIndex].file;
+    setFramePage(pageIndex);
     history.replaceState(null,'','#tela-'+(flowPosition(pageIndex)+1));
-  });
+  },direction);
 }
 function loadFeedback(ctx){
   runNavigation(()=>{
     feedbackContext=ctx;
     currentPage=ctx.correct?4:6;
-    frame.title=pages[currentPage].title;
-    frame.src=pages[currentPage].file;
-  });
+    setFramePage(currentPage);
+  },1);
 }
 
 function getImageAlt(el){return el?.querySelector('img')?.alt?.trim()||''}
@@ -599,10 +675,8 @@ function setupMobilePointerDrag(doc){
 }
 
 function wireChild(){
-  navLock=false;
   let doc;try{doc=frame.contentDocument}catch(e){return}if(!doc)return;
   hasShownScreen=true;
-  playScreenEnter(doc);
   setupMobilePointerDrag(doc);
   if(feedbackContext){patchFeedback(doc)}else{
     patchPoints(doc);
@@ -657,16 +731,8 @@ function wireChild(){
     }
     if(text==='voltar'){event.preventDefault();goBackFromPage(currentPage);return}
     if(text==='fechar'){event.preventDefault();loadPage(0);return}
+    if(text.includes('gravar nota')){event.preventDefault();showToast('Nota gravada.');return}
     if(text.includes('concluir aula')){event.preventDefault();showToast('Aula concluída.');return}
   },true);
 }
-frame.addEventListener('load',()=>{
-  let doc=null;
-  try{doc=frame.contentDocument}catch(e){doc=null}
-  if(!doc){
-    showToast('Abra esta aula por um servidor local. O navegador bloqueia a navegação quando o arquivo é aberto direto.');
-    return;
-  }
-  wireChild();
-});
 loadPage(0);

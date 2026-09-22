@@ -11,12 +11,26 @@ body {
 }
 
 .frame-wrap {
+  position: relative;
   width: 100%;
   height: 100dvh;
+  overflow: hidden;
   background: #fff;
 }
 
-iframe {
+.screen-slot {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.screen-slot.is-idle {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.screen-frame {
   display: block;
   width: 100%;
   height: 100%;

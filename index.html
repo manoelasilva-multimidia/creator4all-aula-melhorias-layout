@@ -9,7 +9,12 @@
 </head>
 <body>
   <div class="frame-wrap">
-    <iframe id="screenFrame" title="Aula Creator4all Premium"></iframe>
+    <div class="screen-slot is-active" id="slotA">
+      <iframe class="screen-frame" title="Aula Creator4all Premium"></iframe>
+    </div>
+    <div class="screen-slot is-idle" id="slotB" aria-hidden="true">
+      <iframe class="screen-frame" title=""></iframe>
+    </div>
   </div>
   <div class="flow-toast" id="flowToast" role="status" aria-live="polite"></div>
   <script src="js/fluxo.js"></script>
