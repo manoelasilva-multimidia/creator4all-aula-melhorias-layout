@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>
+      Creator4all Premium — Jogo da memória habitats
+    </title>
+    <link rel="stylesheet" href="../css/telas/11-memoria-habitats.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+  </head>
+  <body>
+    <header class="desktop-header">
+      <nav class="toolbar" aria-label="Controles da aula">
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-times" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Fechar
+          </span>
+        </button>
+        <button class="tool a11y-trigger" type="button" aria-expanded="false">
+          <span class="icon">
+            <i class="fas fa-universal-access" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Acessibilidade
+          </span>
+        </button>
+        <button class="tool sound-trigger" type="button">
+          <span class="icon">
+            <i class="fas fa-volume-up" aria-hidden="true">
+            </i>
+            <i class="fas fa-volume-mute" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Som
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-left" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Voltar
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-right" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Avançar
+          </span>
+        </button>
+        <div class="step">
+          9 de 12
+        </div>
+        <div class="grow">
+        </div>
+        <div class="points">
+          <strong>
+            60
+          </strong>
+          <span>
+            Pontos
+          </span>
+        </div>
+      </nav>
+    </header>
+    <header class="mobile-header">
+      <button class="mobile-action" type="button" aria-label="Fechar">
+        <i class="fas fa-times" aria-hidden="true">
+        </i>
+      </button>
+      <div class="mobile-center">
+        <strong>
+          Jogo da memória
+        </strong>
+        <span>
+          9 de 12
+        </span>
+      </div>
+      <button class="mobile-action sound-trigger" type="button" aria-label="Som">
+        <i class="fas fa-volume-up" aria-hidden="true">
+        </i>
+        <i class="fas fa-volume-mute" aria-hidden="true">
+        </i>
+      </button>
+      <button class="mobile-action a11y-trigger" type="button" aria-label="Acessibilidade" aria-expanded="false">
+        <i class="fas fa-universal-access" aria-hidden="true">
+        </i>
+      </button>
+    </header>
+    <div class="progress">
+      <span style="width:75%">
+      </span>
+    </div>
+    <main class="stage">
+      <article class="activity">
+        <div class="fixo-top-right">
+          <div id="icones-tentativas">
+            <p class="msgTentativasRestantes">
+              Tentativas:
+              <span class="foraDaTela">
+                2
+              </span>
+            </p>
+            <span class="icon-trevo">
+            </span>
+            <span class="icon-trevo">
+            </span>
+          </div>
+        </div>
+        <header class="activity-header">
+          <p class="prompt">
+            Você consegue encontrar os pares de habitats iguais? Observe com atenção e vire as cartas para formar os pares!
+          </p>
+        </header>
+        <section class="activity-body">
+          <p class="helper">
+            Vire duas cartas por vez. Quando encontrar um par, ele permanece aberto.
+          </p>
+          <div class="memory-grid">
+            <button class="memory-card" type="button" data-pair="polar" aria-label="Carta da memória: Região polar com gelo e neve">
+              <span class="card-inner">
+                <span class="card-face card-back" aria-hidden="true">
+                </span>
+                <span class="card-face card-front">
+                  <img src="../img/11-memoria-habitats-regiao-polar-com-gelo--b5a861.jpg" alt="Região polar com gelo e neve">
+                  <span class="match-badge" aria-hidden="true">
+                  </span>
+                </span>
+              </span>
+            </button>
+            <button class="memory-card" type="button" data-pair="ocean" aria-label="Carta da memória: Oceano azul com ondas">
+              <span class="card-inner">
+                <span class="card-face card-back" aria-hidden="true">
+                </span>
+                <span class="card-face card-front">
+                  <img src="../img/11-memoria-habitats-oceano-azul-com-ondas-a37ce8.jpg" alt="Oceano azul com ondas">
+                  <span class="match-badge" aria-hidden="true">
+                  </span>
+                </span>
+              </span>
+            </button>
+            <button class="memory-card" type="button" data-pair="forest" aria-label="Carta da memória: Floresta tropical densa e verde">
+              <span class="card-inner">
+                <span class="card-face card-back" aria-hidden="true">
+                </span>
+                <span class="card-face card-front">
+                  <img src="../img/11-memoria-habitats-floresta-tropical-dens-719d12.jpg" alt="Floresta tropical densa e verde">
+                  <span class="match-badge" aria-hidden="true">
+                  </span>
+                </span>
+              </span>
+            </button>
+            <button class="memory-card" type="button" data-pair="forest" aria-label="Carta da memória: Floresta tropical densa e verde">
+              <span class="card-inner">
+                <span class="card-face card-back" aria-hidden="true">
+                </span>
+                <span class="card-face card-front">
+                  <img src="../img/11-memoria-habitats-floresta-tropical-dens-f44fe3.jpg" alt="Floresta tropical densa e verde">
+                  <span class="match-badge" aria-hidden="true">
+                  </span>
+                </span>
+              </span>
+            </button>
+            <button class="memory-card" type="button" data-pair="polar" aria-label="Carta da memória: Região polar com gelo e neve">
+              <span class="card-inner">
+                <span class="card-face card-back" aria-hidden="true">
+                </span>
+                <span class="card-face card-front">
+                  <img src="../img/11-memoria-habitats-regiao-polar-com-gelo--9680c9.jpg" alt="Região polar com gelo e neve">
+                  <span class="match-badge" aria-hidden="true">
+                  </span>
+                </span>
+              </span>
+            </button>
+            <button class="memory-card" type="button" data-pair="ocean" aria-label="Carta da memória: Oceano azul com ondas">
+              <span class="card-inner">
+                <span class="card-face card-back" aria-hidden="true">
+                </span>
+                <span class="card-face card-front">
+                  <img src="../img/11-memoria-habitats-oceano-azul-com-ondas-d03742.jpg" alt="Oceano azul com ondas">
+                  <span class="match-badge" aria-hidden="true">
+                  </span>
+                </span>
+              </span>
+            </button>
+          </div>
+        </section>
+        <footer class="activity-footer">
+          <span class="status" id="status">
+            0 de 3 pares encontrados
+          </span>
+          <button class="primary" id="confirmButton" type="button" disabled>
+            Confirmar resposta
+          </button>
+        </footer>
+      </article>
+    </main>
+    <div class="a11y-panel" id="a11yPanel" hidden>
+      <strong>
+        Acessibilidade
+      </strong>
+      <button id="fontButton" type="button">
+        Aumentar texto
+      </button>
+    </div>
+    <script src="../js/telas/11-memoria-habitats.js"></script>
+</body>
+</html>

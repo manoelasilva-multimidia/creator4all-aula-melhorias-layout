@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>
+      Creator4all Premium — Arrastar e soltar habitats
+    </title>
+    <link rel="stylesheet" href="../css/telas/10-arrastar-habitats.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+  </head>
+  <body>
+    <header class="desktop-header">
+      <nav class="toolbar" aria-label="Controles da aula">
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-times" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Fechar
+          </span>
+        </button>
+        <button class="tool a11y-trigger" type="button" aria-expanded="false">
+          <span class="icon">
+            <i class="fas fa-universal-access" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Acessibilidade
+          </span>
+        </button>
+        <button class="tool sound-trigger" type="button">
+          <span class="icon">
+            <i class="fas fa-volume-up" aria-hidden="true">
+            </i>
+            <i class="fas fa-volume-mute" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Som
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-left" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Voltar
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-right" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Avançar
+          </span>
+        </button>
+        <div class="step">
+          8 de 12
+        </div>
+        <div class="grow">
+        </div>
+        <div class="points">
+          <strong>
+            50
+          </strong>
+          <span>
+            Pontos
+          </span>
+        </div>
+      </nav>
+    </header>
+    <header class="mobile-header">
+      <button class="mobile-action" type="button" aria-label="Fechar">
+        <i class="fas fa-times" aria-hidden="true">
+        </i>
+      </button>
+      <div class="mobile-center">
+        <strong>
+          Arrastar e soltar
+        </strong>
+        <span>
+          8 de 12
+        </span>
+      </div>
+      <button class="mobile-action sound-trigger" type="button" aria-label="Som">
+        <i class="fas fa-volume-up" aria-hidden="true">
+        </i>
+        <i class="fas fa-volume-mute" aria-hidden="true">
+        </i>
+      </button>
+      <button class="mobile-action a11y-trigger" type="button" aria-label="Acessibilidade" aria-expanded="false">
+        <i class="fas fa-universal-access" aria-hidden="true">
+        </i>
+      </button>
+    </header>
+    <div class="progress">
+      <span>
+      </span>
+    </div>
+    <main class="stage">
+      <article class="activity">
+        <div class="fixo-top-right">
+          <div id="icones-tentativas">
+            <p class="msgTentativasRestantes">
+              Tentativas:
+              <span class="foraDaTela">
+                2
+              </span>
+            </p>
+            <span class="icon-trevo">
+            </span>
+            <span class="icon-trevo">
+            </span>
+          </div>
+        </div>
+        <header class="activity-header">
+          <p class="prompt">
+            Cada habitat tem suas condições especiais. Vamos organizar as descrições de acordo com o ambiente que elas combinam?
+        Arraste cada imagem para a coleção correta.
+          </p>
+        </header>
+        <section class="activity-body">
+          <p class="helper">
+            Arraste uma imagem para uma coleção. No celular, toque na imagem e depois na coleção desejada.
+          </p>
+          <div class="collections">
+            <section class="drop-zone" data-zone="ocean" tabindex="0">
+              <header class="drop-header">
+                <strong>
+                  Oceano
+                </strong>
+              </header>
+              <div class="drop-content">
+                <span class="empty-message">
+                  Solte aqui as imagens relacionadas ao oceano.
+                </span>
+              </div>
+            </section>
+            <section class="drop-zone" data-zone="forest" tabindex="0">
+              <header class="drop-header">
+                <strong>
+                  Floresta
+                </strong>
+              </header>
+              <div class="drop-content">
+                <span class="empty-message">
+                  Solte aqui as imagens relacionadas à floresta.
+                </span>
+              </div>
+            </section>
+          </div>
+          <div class="tray">
+            <p class="tray-label">
+              Imagens para classificar
+            </p>
+            <div class="item-grid">
+              <button class="drag-item" draggable="true" data-id="ocean_animals" data-correct="ocean" type="button">
+                <img src="../img/10-arrastar-habitats-animais-marinhos-no-o-c2826b.jpg" alt="Animais marinhos no oceano">
+                <span class="drag-handle">
+                  Mover
+                </span>
+              </button>
+              <button class="drag-item" draggable="true" data-id="hot_dry" data-correct="none" type="button">
+                <img src="../img/10-arrastar-habitats-ambiente-quente-e-sec-3ed508.png" alt="Ambiente quente e seco">
+                <span class="drag-handle">
+                  Mover
+                </span>
+              </button>
+              <button class="drag-item" draggable="true" data-id="forest_animals" data-correct="forest" type="button">
+                <img src="../img/10-arrastar-habitats-animais-vivendo-na-fl-16b755.jpg" alt="Animais vivendo na floresta">
+                <span class="drag-handle">
+                  Mover
+                </span>
+              </button>
+              <button class="drag-item" draggable="true" data-id="trees" data-correct="forest" type="button">
+                <img src="../img/10-arrastar-habitats-floresta-com-muitas-a-ae92cf.jpg" alt="Floresta com muitas árvores e plantas">
+                <span class="drag-handle">
+                  Mover
+                </span>
+              </button>
+              <button class="drag-item" draggable="true" data-id="shelter" data-correct="forest" type="button">
+                <img src="../img/10-arrastar-habitats-local-com-bastante-ab-a011f4.jpg" alt="Local com bastante abrigo">
+                <span class="drag-handle">
+                  Mover
+                </span>
+              </button>
+              <button class="drag-item" draggable="true" data-id="aquatic" data-correct="ocean" type="button">
+                <img src="../img/10-arrastar-habitats-habitat-de-animais-aq-de874b.jpg" alt="Habitat de animais aquáticos">
+                <span class="drag-handle">
+                  Mover
+                </span>
+              </button>
+              <button class="drag-item" draggable="true" data-id="water" data-correct="ocean" type="button">
+                <img src="../img/10-arrastar-habitats-ambiente-com-muita-ag-003b89.jpg" alt="Ambiente com muita água">
+                <span class="drag-handle">
+                  Mover
+                </span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <footer class="activity-footer">
+          <button class="primary" id="confirmButton" type="button" disabled>
+            Confirmar resposta
+          </button>
+        </footer>
+      </article>
+    </main>
+    <div class="a11y-panel" id="a11yPanel" hidden>
+      <strong>
+        Acessibilidade
+      </strong>
+      <button id="fontButton" type="button">
+        Aumentar texto
+      </button>
+    </div>
+    <script src="../js/telas/10-arrastar-habitats.js"></script>
+</body>
+</html>

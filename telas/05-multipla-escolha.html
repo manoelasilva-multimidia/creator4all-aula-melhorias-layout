@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>
+      Creator4all Premium — Múltipla escolha
+    </title>
+    <link rel="stylesheet" href="../css/telas/05-multipla-escolha.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+  </head>
+  <body>
+    <header class="desktop-header">
+      <nav class="toolbar" aria-label="Controles da aula">
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-times" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Fechar
+          </span>
+        </button>
+        <button class="tool a11y-trigger" type="button" aria-expanded="false">
+          <span class="icon">
+            <i class="fas fa-universal-access" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Acessibilidade
+          </span>
+        </button>
+        <button class="tool sound-trigger" type="button">
+          <span class="icon">
+            <i class="fas fa-volume-up" aria-hidden="true">
+            </i>
+            <i class="fas fa-volume-mute" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Som
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-left" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Voltar
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-right" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Avançar
+          </span>
+        </button>
+        <div class="step">
+          4 de 12
+        </div>
+        <div class="grow">
+        </div>
+        <div class="points">
+          <strong>
+            10
+          </strong>
+          <span>
+            Pontos
+          </span>
+        </div>
+      </nav>
+    </header>
+    <header class="mobile-header">
+      <button class="mobile-action" type="button" aria-label="Fechar">
+        <i class="fas fa-times" aria-hidden="true">
+        </i>
+      </button>
+      <div class="mobile-center">
+        <strong>
+          Múltipla escolha
+        </strong>
+        <span>
+          4 de 12
+        </span>
+      </div>
+      <button class="mobile-action sound-trigger" type="button" aria-label="Som">
+        <i class="fas fa-volume-up" aria-hidden="true">
+        </i>
+        <i class="fas fa-volume-mute" aria-hidden="true">
+        </i>
+      </button>
+      <button class="mobile-action a11y-trigger" type="button" aria-label="Acessibilidade" aria-expanded="false">
+        <i class="fas fa-universal-access" aria-hidden="true">
+        </i>
+      </button>
+    </header>
+    <div class="progress" aria-hidden="true">
+      <span style="width:33.3%">
+      </span>
+    </div>
+    <div class="a11y-panel" id="a11yPanel" hidden>
+      <strong>
+        Acessibilidade
+      </strong>
+      <button type="button" id="fontButton">
+        Aumentar texto
+      </button>
+      <button type="button" id="contrastButton">
+        Alto contraste
+      </button>
+    </div>
+    <main class="stage">
+      <article class="card">
+        <div class="fixo-top-right">
+          <div id="icones-tentativas">
+            <p class="msgTentativasRestantes">
+              Tentativas:
+              <span class="foraDaTela">
+                2
+              </span>
+            </p>
+            <span class="icon-trevo">
+            </span>
+            <span class="icon-trevo">
+            </span>
+          </div>
+        </div>
+        <header class="question-head">
+          <div class="question-copy">
+            <h1 class="question">
+              Conforme explicado no texto, o que é um habitat? Marque a opção correta.
+            </h1>
+          </div>
+        </header>
+        <section class="card-body">
+          <div class="choices">
+            <button class="choice" type="button" data-i="0" aria-pressed="false">
+              <span class="radio">
+              </span>
+              <span>
+                O lugar onde os animais brincam.
+              </span>
+            </button>
+            <button class="choice" type="button" data-i="1" aria-pressed="false">
+              <span class="radio">
+              </span>
+              <span>
+                O lugar onde um animal encontra alimento, água, abrigo e condições para viver.
+              </span>
+            </button>
+            <button class="choice" type="button" data-i="2" aria-pressed="false">
+              <span class="radio">
+              </span>
+              <span>
+                O lugar onde os animais se escondem.
+              </span>
+            </button>
+            <button class="choice" type="button" data-i="3" aria-pressed="false">
+              <span class="radio">
+              </span>
+              <span>
+                O lugar onde existem muitos humanos.
+              </span>
+            </button>
+          </div>
+        </section>
+        <footer class="card-footer">
+          <button class="primary" id="confirm" disabled>
+            Confirmar resposta
+          </button>
+        </footer>
+      </article>
+    </main>
+    <script src="../js/telas/05-multipla-escolha.js"></script>
+</body>
+</html>

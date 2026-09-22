@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>
+      Creator4all Premium — Associar animal ao habitat
+    </title>
+    <link rel="stylesheet" href="../css/telas/08-associar-caracteristicas.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+  </head>
+  <body>
+    <header class="desktop-header">
+      <nav class="toolbar" aria-label="Controles da aula">
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-times" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Fechar
+          </span>
+        </button>
+        <button class="tool a11y-trigger" type="button" aria-expanded="false">
+          <span class="icon">
+            <i class="fas fa-universal-access" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Acessibilidade
+          </span>
+        </button>
+        <button class="tool sound-trigger" type="button">
+          <span class="icon">
+            <i class="fas fa-volume-up" aria-hidden="true">
+            </i>
+            <i class="fas fa-volume-mute" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Som
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-left" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Voltar
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-right" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Avançar
+          </span>
+        </button>
+        <div class="step">
+          6 de 12
+        </div>
+        <div class="grow">
+        </div>
+        <div class="points">
+          <strong>
+            30
+          </strong>
+          <span>
+            Pontos
+          </span>
+        </div>
+      </nav>
+    </header>
+    <header class="mobile-header">
+      <button class="mobile-action" type="button" aria-label="Fechar">
+        <i class="fas fa-times" aria-hidden="true">
+        </i>
+      </button>
+      <div class="mobile-center">
+        <strong>
+          Associar
+        </strong>
+        <span>
+          6 de 12
+        </span>
+      </div>
+      <button class="mobile-action sound-trigger" type="button" aria-label="Som">
+        <i class="fas fa-volume-up" aria-hidden="true">
+        </i>
+        <i class="fas fa-volume-mute" aria-hidden="true">
+        </i>
+      </button>
+      <button class="mobile-action a11y-trigger" type="button" aria-label="Acessibilidade" aria-expanded="false">
+        <i class="fas fa-universal-access" aria-hidden="true">
+        </i>
+      </button>
+    </header>
+    <div class="progress" aria-hidden="true">
+      <span>
+      </span>
+    </div>
+    <main class="stage">
+      <article class="activity">
+        <div class="fixo-top-right">
+          <div id="icones-tentativas">
+            <p class="msgTentativasRestantes">
+              Tentativas:
+              <span class="foraDaTela">
+                2
+              </span>
+            </p>
+            <span class="icon-trevo">
+            </span>
+            <span class="icon-trevo">
+            </span>
+          </div>
+        </div>
+        <header class="activity-header">
+          <p class="prompt">
+            Segundo o texto, cada animal possui características que o ajudam a viver em seu ambiente.
+        Vamos relacionar cada animal a uma característica do seu habitat!
+          </p>
+        </header>
+        <section class="activity-body">
+          <p class="helper">
+            Selecione uma imagem de qualquer coluna e depois escolha a correspondente na outra. Para trocar uma associação, toque em um item já ligado.
+          </p>
+          <div class="match-board" id="matchBoard">
+            <div class="column-labels" aria-hidden="true">
+              <span class="column-label">
+                Animais
+              </span>
+              <span class="column-label">
+                Habitats
+              </span>
+            </div>
+            <div class="pairs" id="pairs">
+              <svg class="lines" id="lines" aria-hidden="true">
+              </svg>
+              <div class="pair-column">
+                <button class="pair-card left" type="button" data-id="penguin" aria-pressed="false">
+                  <img src="../img/08-associar-caracteristicas-pinguim-4b08b4.jpg" alt="Pinguim">
+                  <span class="pair-number" aria-hidden="true">
+                  </span>
+                </button>
+                <button class="pair-card left" type="button" data-id="forest-animal" aria-pressed="false">
+                  <img src="../img/08-associar-caracteristicas-animal-da-flor-9bb036.jpg" alt="Animal da floresta">
+                  <span class="pair-number" aria-hidden="true">
+                  </span>
+                </button>
+                <button class="pair-card left" type="button" data-id="fish" aria-pressed="false">
+                  <img src="../img/08-associar-caracteristicas-peixe-c25f8c.jpg" alt="Peixe">
+                  <span class="pair-number" aria-hidden="true">
+                  </span>
+                </button>
+              </div>
+              <div class="pair-column">
+                <button class="pair-card right" type="button" data-id="ice-habitat" aria-pressed="false">
+                  <img src="../img/08-associar-caracteristicas-iglu-e-gelo-0b749c.jpg" alt="Iglu e gelo">
+                  <span class="pair-number" aria-hidden="true">
+                  </span>
+                </button>
+                <button class="pair-card right" type="button" data-id="forest-habitat" aria-pressed="false">
+                  <img src="../img/08-associar-caracteristicas-floresta-335be9.jpg" alt="Floresta">
+                  <span class="pair-number" aria-hidden="true">
+                  </span>
+                </button>
+                <button class="pair-card right" type="button" data-id="reef-habitat" aria-pressed="false">
+                  <img src="../img/08-associar-caracteristicas-peixe-em-recif-444944.jpg" alt="Peixe em recife">
+                  <span class="pair-number" aria-hidden="true">
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="activity-footer">
+          <span class="match-status" id="matchStatus">
+            0 de 3 pares associados
+          </span>
+          <button class="primary" id="confirmButton" type="button" disabled>
+            Confirmar resposta
+          </button>
+        </footer>
+      </article>
+    </main>
+    <div class="a11y-panel" id="a11yPanel" hidden>
+      <strong>
+        Acessibilidade
+      </strong>
+      <button type="button" id="fontButton">
+        Aumentar texto
+      </button>
+      <button type="button" id="contrastButton">
+        Alto contraste
+      </button>
+    </div>
+    <script src="../js/telas/08-associar-caracteristicas.js"></script>
+</body>
+</html>

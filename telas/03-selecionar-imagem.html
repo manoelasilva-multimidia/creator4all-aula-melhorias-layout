@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>
+      Creator4all Premium — Selecionar imagem
+    </title>
+    <link rel="stylesheet" href="../css/telas/03-selecionar-imagem.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+  </head>
+  <body>
+    <header class="desktop-header">
+      <nav class="toolbar" aria-label="Controles da aula">
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-times" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Fechar
+          </span>
+        </button>
+        <button class="tool a11y-trigger" type="button" aria-expanded="false">
+          <span class="icon">
+            <i class="fas fa-universal-access" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Acessibilidade
+          </span>
+        </button>
+        <button class="tool sound-trigger" type="button">
+          <span class="icon">
+            <i class="fas fa-volume-up" aria-hidden="true">
+            </i>
+            <i class="fas fa-volume-mute" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Som
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-left" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Voltar
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-right" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Avançar
+          </span>
+        </button>
+        <div class="step">
+          3 de 12
+        </div>
+        <div class="grow">
+        </div>
+        <div class="points">
+          <strong>
+            0
+          </strong>
+          <span>
+            Pontos
+          </span>
+        </div>
+      </nav>
+    </header>
+    <header class="mobile-header">
+      <button class="mobile-action" type="button" aria-label="Fechar">
+        <i class="fas fa-times" aria-hidden="true">
+        </i>
+      </button>
+      <div class="mobile-center">
+        <strong>
+          Selecionar imagem
+        </strong>
+        <span>
+          3 de 12
+        </span>
+      </div>
+      <button class="mobile-action sound-trigger" type="button" aria-label="Som">
+        <i class="fas fa-volume-up" aria-hidden="true">
+        </i>
+        <i class="fas fa-volume-mute" aria-hidden="true">
+        </i>
+      </button>
+      <button class="mobile-action a11y-trigger" type="button" aria-label="Acessibilidade" aria-expanded="false">
+        <i class="fas fa-universal-access" aria-hidden="true">
+        </i>
+      </button>
+    </header>
+    <div class="progress" aria-hidden="true">
+      <span style="width:25%">
+      </span>
+    </div>
+    <div class="a11y-panel" id="a11yPanel" hidden>
+      <strong>
+        Acessibilidade
+      </strong>
+      <button type="button" id="fontButton">
+        Aumentar texto
+      </button>
+      <button type="button" id="contrastButton">
+        Alto contraste
+      </button>
+    </div>
+    <main class="stage">
+      <article class="card">
+        <div class="fixo-top-right">
+          <div id="icones-tentativas">
+            <p class="msgTentativasRestantes">
+              Tentativas:
+              <span class="foraDaTela">
+                2
+              </span>
+            </p>
+            <span class="icon-trevo">
+            </span>
+            <span class="icon-trevo">
+            </span>
+          </div>
+        </div>
+        <header class="question-head">
+          <div class="question-copy">
+            <h1 class="question">
+              De acordo com o texto que lemos, alguns animais aquáticos vivem em um habitat com muita água. Qual destas imagens representa um oceano?
+            </h1>
+          </div>
+        </header>
+        <section class="card-body">
+          <div class="image-grid">
+            <button class="image-option" type="button" data-index="0" aria-pressed="false">
+              <span class="check">
+                ✓
+              </span>
+              <img src="../img/03-selecionar-imagem-oceano-com-peixes-30d88d.jpg" alt="Oceano com peixes">
+            </button>
+            <button class="image-option" type="button" data-index="1" aria-pressed="false">
+              <span class="check">
+                ✓
+              </span>
+              <img src="../img/03-selecionar-imagem-floresta-com-rio-448351.jpg" alt="Floresta com rio">
+            </button>
+            <button class="image-option" type="button" data-index="2" aria-pressed="false">
+              <span class="check">
+                ✓
+              </span>
+              <img src="../img/03-selecionar-imagem-regiao-seca-com-monta-06598c.jpg" alt="Região seca com montanhas">
+            </button>
+            <button class="image-option" type="button" data-index="3" aria-pressed="false">
+              <span class="check">
+                ✓
+              </span>
+              <img src="../img/03-selecionar-imagem-cidade-382599.jpg" alt="Cidade">
+            </button>
+            <button class="image-option" type="button" data-index="4" aria-pressed="false">
+              <span class="check">
+                ✓
+              </span>
+              <img src="../img/03-selecionar-imagem-regiao-polar-com-gelo-8be54b.jpg" alt="Região polar com gelo">
+            </button>
+            <button class="image-option" type="button" data-index="5" aria-pressed="false">
+              <span class="check">
+                ✓
+              </span>
+              <img src="../img/03-selecionar-imagem-deserto-com-cactos-dba337.jpg" alt="Deserto com cactos">
+            </button>
+          </div>
+        </section>
+        <footer class="card-footer">
+          <button class="primary" id="confirm" disabled>
+            Confirmar resposta
+          </button>
+        </footer>
+      </article>
+    </main>
+    <script src="../js/telas/03-selecionar-imagem.js"></script>
+</body>
+</html>

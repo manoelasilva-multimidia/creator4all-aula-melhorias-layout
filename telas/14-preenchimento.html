@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>
+      Creator4all Premium — Preenchimento
+    </title>
+    <link rel="stylesheet" href="../css/telas/14-preenchimento.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+  </head>
+  <body>
+    <header class="desktop-header">
+      <nav class="toolbar" aria-label="Controles da aula">
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-times" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Fechar
+          </span>
+        </button>
+        <button class="tool a11y-trigger" type="button" aria-expanded="false">
+          <span class="icon">
+            <i class="fas fa-universal-access" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Acessibilidade
+          </span>
+        </button>
+        <button class="tool sound-trigger" type="button">
+          <span class="icon">
+            <i class="fas fa-volume-up" aria-hidden="true">
+            </i>
+            <i class="fas fa-volume-mute" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Som
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-left" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Voltar
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-right" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Avançar
+          </span>
+        </button>
+        <div class="step">
+          12 de 12
+        </div>
+        <div class="grow">
+        </div>
+        <div class="points">
+          <strong>
+            90
+          </strong>
+          <span>
+            Pontos
+          </span>
+        </div>
+      </nav>
+    </header>
+    <header class="mobile-header">
+      <button class="mobile-action" type="button" aria-label="Fechar">
+        <i class="fas fa-times" aria-hidden="true">
+        </i>
+      </button>
+      <div class="mobile-center">
+        <strong>
+          Preenchimento
+        </strong>
+        <span>
+          12 de 12
+        </span>
+      </div>
+      <button class="mobile-action sound-trigger" type="button" aria-label="Som">
+        <i class="fas fa-volume-up" aria-hidden="true">
+        </i>
+        <i class="fas fa-volume-mute" aria-hidden="true">
+        </i>
+      </button>
+      <button class="mobile-action a11y-trigger" type="button" aria-label="Acessibilidade" aria-expanded="false">
+        <i class="fas fa-universal-access" aria-hidden="true">
+        </i>
+      </button>
+    </header>
+    <div class="progress">
+      <span>
+      </span>
+    </div>
+    <main class="stage">
+      <article class="activity">
+        <div class="fixo-top-right">
+          <div id="icones-tentativas">
+            <p class="msgTentativasRestantes">
+              Tentativas:
+              <span class="foraDaTela">
+                2
+              </span>
+            </p>
+            <span class="icon-trevo">
+            </span>
+            <span class="icon-trevo">
+            </span>
+          </div>
+        </div>
+        <header class="activity-header">
+          <p class="prompt">
+            O texto nos ensinou um conceito muito importante.
+        Complete a frase para descobrir o que é o lugar onde os animais encontram tudo o que precisam.
+        Preencha o espaço com a palavra correta.
+          </p>
+        </header>
+        <section class="activity-body">
+          <p class="helper">
+            Complete a lacuna abaixo com a palavra que considerar correta.
+          </p>
+          <div class="fill-shell">
+            <section class="sentence-card" aria-labelledby="sentenceTitle">
+              <p class="sentence-label" id="sentenceTitle">
+                Complete a frase
+              </p>
+              <p class="sentence">
+                O lugar onde um animal encontra alimento, água, abrigo e condições para viver
+            é chamado de
+                <span class="inline-answer">
+                  <label for="answer" class="sr-only">
+                    Resposta
+                  </label>
+                  <input
+                id="answer"
+                name="answer"
+                type="text"
+                autocomplete="off"
+                spellcheck="false"
+                aria-describedby="answerHelp"
+                placeholder="Digite sua resposta"
+              >
+                </span>
+              </p>
+              <span class="input-help" id="answerHelp">
+                Digite apenas a palavra que completa a frase.
+              </span>
+            </section>
+          </div>
+        </section>
+        <footer class="activity-footer">
+          <button class="primary" id="confirmButton" type="button" disabled>
+            Confirmar resposta
+          </button>
+        </footer>
+      </article>
+    </main>
+    <div class="a11y-panel" id="a11yPanel" hidden>
+      <strong>
+        Acessibilidade
+      </strong>
+      <button id="fontButton" type="button">
+        Aumentar texto
+      </button>
+    </div>
+    <script src="../js/telas/14-preenchimento.js"></script>
+</body>
+</html>

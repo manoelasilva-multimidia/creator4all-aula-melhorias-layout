@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>
+      Creator4all Premium — Organizar
+    </title>
+    <link rel="stylesheet" href="../css/telas/13-organizar.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+  </head>
+  <body>
+    <header class="desktop-header">
+      <nav class="toolbar" aria-label="Controles da aula">
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-times" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Fechar
+          </span>
+        </button>
+        <button class="tool a11y-trigger" type="button" aria-expanded="false">
+          <span class="icon">
+            <i class="fas fa-universal-access" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Acessibilidade
+          </span>
+        </button>
+        <button class="tool sound-trigger" type="button">
+          <span class="icon">
+            <i class="fas fa-volume-up" aria-hidden="true">
+            </i>
+            <i class="fas fa-volume-mute" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Som
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-left" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Voltar
+          </span>
+        </button>
+        <button class="tool" type="button">
+          <span class="icon">
+            <i class="fas fa-angle-right" aria-hidden="true">
+            </i>
+          </span>
+          <span>
+            Avançar
+          </span>
+        </button>
+        <div class="step">
+          11 de 12
+        </div>
+        <div class="grow">
+        </div>
+        <div class="points">
+          <strong>
+            80
+          </strong>
+          <span>
+            Pontos
+          </span>
+        </div>
+      </nav>
+    </header>
+    <header class="mobile-header">
+      <button class="mobile-action" type="button" aria-label="Fechar">
+        <i class="fas fa-times" aria-hidden="true">
+        </i>
+      </button>
+      <div class="mobile-center">
+        <strong>
+          Organizar
+        </strong>
+        <span>
+          11 de 12
+        </span>
+      </div>
+      <button class="mobile-action sound-trigger" type="button" aria-label="Som">
+        <i class="fas fa-volume-up" aria-hidden="true">
+        </i>
+        <i class="fas fa-volume-mute" aria-hidden="true">
+        </i>
+      </button>
+      <button class="mobile-action a11y-trigger" type="button" aria-label="Acessibilidade" aria-expanded="false">
+        <i class="fas fa-universal-access" aria-hidden="true">
+        </i>
+      </button>
+    </header>
+    <div class="progress">
+      <span>
+      </span>
+    </div>
+    <main class="stage">
+      <article class="activity">
+        <div class="fixo-top-right">
+          <div id="icones-tentativas">
+            <p class="msgTentativasRestantes">
+              Tentativas:
+              <span class="foraDaTela">
+                2
+              </span>
+            </p>
+            <span class="icon-trevo">
+            </span>
+            <span class="icon-trevo">
+            </span>
+          </div>
+        </div>
+        <header class="activity-header">
+          <p class="prompt">
+            O texto nos conta sobre a diversidade dos habitats.
+        Organize as palavras para formar a frase que explica onde os animais vivem.
+          </p>
+        </header>
+        <section class="activity-body">
+          <p class="helper">
+            Selecione ou arraste as palavras para montar a frase na ordem que considerar correta.
+          </p>
+          <div class="organize-shell">
+            <section aria-labelledby="available-title">
+              <p class="section-caption" id="available-title">
+                Palavras disponíveis
+              </p>
+              <div class="word-bank" id="wordBank">
+                <button class="word-chip" draggable="true" data-id="lugares" type="button">
+                  lugares
+                </button>
+                <button class="word-chip" draggable="true" data-id="os" type="button">
+                  Os
+                </button>
+                <button class="word-chip" draggable="true" data-id="da" type="button">
+                  da
+                </button>
+                <button class="word-chip" draggable="true" data-id="em" type="button">
+                  em
+                </button>
+                <button class="word-chip" draggable="true" data-id="vivem" type="button">
+                  vivem
+                </button>
+                <button class="word-chip" draggable="true" data-id="diferentes" type="button">
+                  diferentes
+                </button>
+                <button class="word-chip" draggable="true" data-id="animais" type="button">
+                  animais
+                </button>
+                <button class="word-chip" draggable="true" data-id="natureza" type="button">
+                  natureza
+                </button>
+              </div>
+            </section>
+            <section class="answer-block" aria-labelledby="answer-title">
+              <p class="section-caption" id="answer-title">
+                Sua frase
+              </p>
+              <div
+            class="answer-zone"
+            id="answerZone"
+            tabindex="0"
+            aria-label="Área para organizar a frase"
+          >
+                <span class="answer-placeholder" id="answerPlaceholder">
+                  Coloque as palavras aqui para formar a frase.
+                </span>
+              </div>
+              <div class="actions-row">
+                <button class="reset" id="resetButton" type="button">
+                  Refazer
+                </button>
+              </div>
+            </section>
+          </div>
+        </section>
+        <footer class="activity-footer">
+          <button class="primary" id="confirmButton" type="button" disabled>
+            Confirmar resposta
+          </button>
+        </footer>
+      </article>
+    </main>
+    <div class="a11y-panel" id="a11yPanel" hidden>
+      <strong>
+        Acessibilidade
+      </strong>
+      <button id="fontButton" type="button">
+        Aumentar texto
+      </button>
+    </div>
+    <script src="../js/telas/13-organizar.js"></script>
+</body>
+</html>
