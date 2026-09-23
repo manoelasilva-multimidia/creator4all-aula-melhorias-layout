@@ -292,6 +292,10 @@ button:focus-visible{
   line-height:1.45;
 }
 
+.answer-placeholder[hidden]{
+  display:none;
+}
+
 .placed-word{
   min-height:42px;
   padding:8px 14px;
